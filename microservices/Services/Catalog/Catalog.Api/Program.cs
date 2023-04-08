@@ -11,7 +11,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<ICatalogContext, CatalogContext>();
-builder.Services.AddScoped<IProductRepository, IProductRepository>();
+builder.Services.AddScoped<IProductRepository, Productepository>();
 
 var app = builder.Build();
 
