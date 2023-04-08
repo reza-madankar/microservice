@@ -25,3 +25,17 @@ F:\GitHub\microservice\microservices\Services\Catalog\Catalog.Api\obj\Debug\net6
 F:\GitHub\microservice\microservices\Services\Catalog\Catalog.Api\obj\Debug\net6.0\ref\Catalog.Api.dll
 F:\GitHub\microservice\microservices\Services\Catalog\Catalog.Api\obj\Debug\net6.0\Catalog.Api.pdb
 F:\GitHub\microservice\microservices\Services\Catalog\Catalog.Api\obj\Debug\net6.0\Catalog.Api.genruntimeconfig.cache
+F:\GitHub\microservice\microservices\Services\Catalog\Catalog.Api\bin\Debug\net6.0\Products.json
+F:\GitHub\microservice\microservices\Services\Catalog\Catalog.Api\bin\Debug\net6.0\AWSSDK.Core.dll
+F:\GitHub\microservice\microservices\Services\Catalog\Catalog.Api\bin\Debug\net6.0\AWSSDK.SecurityToken.dll
+F:\GitHub\microservice\microservices\Services\Catalog\Catalog.Api\bin\Debug\net6.0\DnsClient.dll
+F:\GitHub\microservice\microservices\Services\Catalog\Catalog.Api\bin\Debug\net6.0\MongoDB.Bson.dll
+F:\GitHub\microservice\microservices\Services\Catalog\Catalog.Api\bin\Debug\net6.0\MongoDB.Driver.dll
+F:\GitHub\microservice\microservices\Services\Catalog\Catalog.Api\bin\Debug\net6.0\MongoDB.Driver.Core.dll
+F:\GitHub\microservice\microservices\Services\Catalog\Catalog.Api\bin\Debug\net6.0\MongoDB.Libmongocrypt.dll
+F:\GitHub\microservice\microservices\Services\Catalog\Catalog.Api\bin\Debug\net6.0\SharpCompress.dll
+F:\GitHub\microservice\microservices\Services\Catalog\Catalog.Api\bin\Debug\net6.0\Snappier.dll
+F:\GitHub\microservice\microservices\Services\Catalog\Catalog.Api\bin\Debug\net6.0\ZstdSharp.dll
+F:\GitHub\microservice\microservices\Services\Catalog\Catalog.Api\bin\Debug\net6.0\runtimes\linux\native\libmongocrypt.so
+F:\GitHub\microservice\microservices\Services\Catalog\Catalog.Api\bin\Debug\net6.0\runtimes\osx\native\libmongocrypt.dylib
+F:\GitHub\microservice\microservices\Services\Catalog\Catalog.Api\bin\Debug\net6.0\runtimes\win\native\mongocrypt.dll

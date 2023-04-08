@@ -1,0 +1,109 @@
+name: dockercompose3755870783435369445
+services:
+  catalog.api:
+    build:
+      context: F:\GitHub\microservice\microservices
+      dockerfile: Services/Catalog/Catalog.Api/Dockerfile
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: Catalog.Api
+      target: base
+    container_name: catalog.api
+    depends_on:
+      catalogdb:
+        condition: service_started
+    entrypoint:
+    - tail
+    - -f
+    - /dev/null
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS: "true"
+      DOTNET_USE_POLLING_FILE_WATCHER: "1"
+      DatabaseSettings:ConnectionString: mongodb://catalog:27017
+      NUGET_FALLBACK_PACKAGES: /root/.nuget/fallbackpackages;/root/.nuget/fallbackpackages2
+    image: catalogapi:dev
+    labels:
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /root/.nuget/packages
+        --additionalProbingPath /root/.nuget/fallbackpackages --additionalProbingPath
+        /root/.nuget/fallbackpackages2  "/app/bin/Debug/net6.0/Catalog.Api.dll"'
+      com.microsoft.visualstudio.debuggee.killprogram: /bin/sh -c "if PID=$$(pidof
+        dotnet); then kill $$PID; fi"
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 80
+      published: "8000"
+      protocol: tcp
+    tty: true
+    volumes:
+    - type: bind
+      source: F:\GitHub\microservice\microservices\Services\Catalog\Catalog.Api
+      target: /app
+      bind:
+        create_host_path: true
+    - type: bind
+      source: F:\GitHub\microservice\microservices
+      target: /src
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\Diag System\vsdbg\vs2017u5
+      target: /remote_debugger
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\Diag System\.nuget\packages\
+      target: /root/.nuget/packages
+      read_only: true
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages
+      target: /root/.nuget/fallbackpackages
+      read_only: true
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Program Files\dotnet\sdk\NuGetFallbackFolder
+      target: /root/.nuget/fallbackpackages2
+      read_only: true
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\Diag System\AppData\Roaming/ASP.NET/Https
+      target: /root/.aspnet/https
+      read_only: true
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\Diag System\AppData\Roaming/Microsoft/UserSecrets
+      target: /root/.microsoft/usersecrets
+      read_only: true
+      bind:
+        create_host_path: true
+  catalogdb:
+    container_name: catalogdb
+    image: mongo
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 27017
+      published: "27017"
+      protocol: tcp
+    restart: allways
+    volumes:
+    - type: volume
+      source: mongo_data
+      target: /data/db
+      volume: {}
+networks:
+  default:
+    name: dockercompose3755870783435369445_default
+volumes:
+  mongo_data:
+    name: dockercompose3755870783435369445_mongo_data

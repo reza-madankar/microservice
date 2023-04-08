@@ -1,0 +1,26 @@
+[
+  {
+    "Name": "Asus Labtop",
+    "Category": "Computers",
+    "Summary": "Test Summary",
+    "Description": "Test Desc",
+    "Price": "120",
+    "ImageFile": "asus.jpg"
+  },
+  {
+    "Name": "Dell Labtop",
+    "Category": "Computers",
+    "Summary": "Test Summary",
+    "Description": "Test Desc",
+    "Price": "350",
+    "ImageFile": "dell.jpg"
+  },
+  {
+    "Name": "MacBook",
+    "Category": "Computers",
+    "Summary": "Test Summary",
+    "Description": "Test Desc",
+    "Price": "4500",
+    "ImageFile": "macbook.jpg"
+  }
+]
