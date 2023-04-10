@@ -15,7 +15,12 @@
       "ProjectGuid": "5735c5e5-8116-4e80-9e5e-be06f477d8cc",
       "DisplayName": "docker-compose",
       "ColorIndex": 1
+    },
+    "f20cb92b-2e6b-4e48-811f-17e9d2b797bc": {
+      "ProjectGuid": "f20cb92b-2e6b-4e48-811f-17e9d2b797bc",
+      "DisplayName": "Basket.Api",
+      "ColorIndex": 2
     }
   },
-  "NextColorIndex": 2
+  "NextColorIndex": 3
 }

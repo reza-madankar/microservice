@@ -1,0 +1,56 @@
+name: dockercompose3755870783435369445
+services:
+  basket.api:
+    build:
+      context: F:\GitHub\microservice\microservices
+      dockerfile: Services/Basket/Basket.Api/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+    image: basketapi
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 80
+      protocol: tcp
+  catalog.api:
+    build:
+      context: F:\GitHub\microservice\microservices
+      dockerfile: Services/Catalog/Catalog.Api/Dockerfile
+    container_name: catalog.api
+    depends_on:
+      catalogdb:
+        condition: service_started
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      DatabaseSettings:ConnectionString: mongodb://catalog:27017
+    image: catalogapi
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 80
+      published: "8000"
+      protocol: tcp
+  catalogdb:
+    container_name: catalogdb
+    image: mongo
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 27017
+      published: "27017"
+      protocol: tcp
+    restart: allways
+    volumes:
+    - type: volume
+      source: mongo_data
+      target: /data/db
+      volume: {}
+networks:
+  default:
+    name: dockercompose3755870783435369445_default
+volumes:
+  mongo_data:
+    name: dockercompose3755870783435369445_mongo_data
